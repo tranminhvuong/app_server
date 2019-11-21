@@ -10,7 +10,7 @@ module.exports = {
         "password": "csmr2todie"
     },
 	'carskit_info' : {
-		'host' : 'localhost',
+		'host' : 'ec2-13-229-83-43.ap-southeast-1.compute.amazonaws.com',
 		'port' : 8889
 	}
 }
