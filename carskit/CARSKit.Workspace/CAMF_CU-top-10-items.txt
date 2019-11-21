@@ -1,0 +1,2 @@
+# userId: recommendations in (itemId, ranking score) pairs, where a correct recommendation is denoted by symbol *.
+1, companion:na;daytime:na;season:na;temperature:na;weather:na: (38, 2.8444114), (25, 2.6267529), (23, 2.580589), (44, 2.4726005), (22, 2.4724224), (32, 2.4502637), (12, 2.4487278), (19, 2.3999307), (18, 2.2408834), (28, 2.2229745)
