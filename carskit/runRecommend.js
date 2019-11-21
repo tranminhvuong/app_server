@@ -39,7 +39,10 @@ module.exports.recommend = function(userId, body) {
                 data.push(line.substring(5, pos+1));
         
                 
-                if(data.length == 0) return reject('không thể gợi ý')
+                if(data.length == 0) {
+                    client.destroy();
+                    return reject('không thể gợi ý')
+                }
                 let dataE = await read.readRecommend(data[0]);
                 client.destroy();
                 return resolve(dataE);
