@@ -10,7 +10,14 @@ module.exports = {
         "password": "csmr2todie"
     },
 	'carskit_info' : {
-		'host' : 'ec2-13-229-83-43.ap-southeast-1.compute.amazonaws.com',
+		'host' : function(){
+            var arr = ["ec2-13-250-34-150.ap-southeast-1.compute.amazonaws.com",
+            "ec2-13-229-83-43.ap-southeast-1.compute.amazonaws.com" ,
+            "ec2-18-140-63-13.ap-southeast-1.compute.amazonaws.com"];
+            let ind = Math.floor(Math.random()*3 );
+            console.log(ind);
+            return arr[ind];
+        },
 		'port' : 8889
 	}
 }

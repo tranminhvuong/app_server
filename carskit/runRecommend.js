@@ -10,17 +10,14 @@ module.exports.recommend = function(userId, body) {
             let testset = 'TEST\n'+header;
             header = header.split(',');
             testset += '\n' + userId + ',5,5';
-            //console.log(map)
-            //console.log(body)
             for(var i=3; i<header.length; i++) {
-               // console.log(map[header[i]])
                 if(body[header[i]] == undefined) testset += ',NA';
                 else testset += ',' +  map[header[i]][parseInt(body[header[i]])].code
             }
             testset += '\n----------------------------------------\n';
 
             console.log(testset)
-            let client = net.connect(config.carskit_info.port, config.carskit_info.host);
+            let client = net.connect(config.carskit_info.port, config.carskit_info.host());
             client.write(testset);
             client.end();
 
