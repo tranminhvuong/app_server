@@ -12,12 +12,12 @@ module.exports.recommend = function(userId, body) {
             testset += '\n' + userId + ',5,5';
             for(var i=3; i<header.length; i++) {
                 if(body[header[i]] == undefined) testset += ',NA';
-                else testset += ',' +  map[header[i]][parseInt(body[header[i]])].code
+                else testset += ',' +  map[header[i]][parseInt(body[header[i]])]
             }
             testset += '\n----------------------------------------\n';
 
             console.log(testset)
-            let client = net.connect(config.carskit_info.port, config.carskit_info.host());
+            let client = net.connect(config.carskit_info.port, config.carskit_info.host);
             client.write(testset);
             client.end();
 
