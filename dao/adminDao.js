@@ -22,4 +22,5 @@ module.exports.getRows = function(table) {
             })
         })
     })
+    
 }
