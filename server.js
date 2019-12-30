@@ -1,6 +1,7 @@
 ﻿var express = require('express');
 var app = express();
 var http = require('http');
+var cityRouter = require('./router/cityRouter')
 var userRouter = require('./router/userRouter');
 var destinationRouter = require('./router/destinationRouter');
 var tripRouter = require('./router/tripRouter');
@@ -15,12 +16,13 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.get('/', function(req, res) {
     console.log('ok');
     res.end('Đồ án tốt nghiệp');
-})
-
+});
+app.use('/api/city', cityRouter);
 app.use('/api/user', userRouter);
 app.use('/api/destination', destinationRouter);
 app.use('/api/trip', tripRouter);
 app.use('/api/admin', adminRouter);
+
 
 // var client = net.connect(config.carskit_info.port, "ec2-13-229-83-43.ap-southeast-1.compute.amazonaws.com");
 // client.write('TRAIN\n');
